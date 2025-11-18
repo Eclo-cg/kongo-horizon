@@ -1,0 +1,6 @@
+[
+  { "id": "brazzaville-classique", "name": "Brazzaville Classique", "duration": "2 jours", "cover": "/placeholder/anne.svg", "places": ["basilique-sainte-anne"] },
+  { "id": "nature-loufoulakari", "name": "Nature Loufoulakari", "duration": "1 jour", "cover": "/placeholder/loufoulakari.svg", "places": ["chutes-loufoulakari"] },
+  { "id": "culture-essentielle", "name": "Culture Essentielle", "duration": "3 jours", "cover": "/placeholder/anne2.svg", "places": ["basilique-sainte-anne"] },
+  { "id": "escapade-pool", "name": "Escapade Pool", "duration": "2 jours", "cover": "/placeholder/lou2.svg", "places": ["chutes-loufoulakari"] }
+]

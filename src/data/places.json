@@ -1,0 +1,134 @@
+[
+  {
+    "id": "basilique-sainte-anne",
+    "name": "Basilique Sainte-Anne",
+    "city": "Brazzaville",
+    "category": "histoire",
+    "coords": { "lat": -4.263, "lng": 15.242 },
+    "cover": "/placeholder/anne.svg",
+    "images": ["/placeholder/anne.svg", "/placeholder/anne2.svg", "/placeholder/anne3.svg"],
+    "description": "Chef-d'œuvre d'architecture sacrée, symbole fort de Brazzaville.",
+    "history": "Inaugurée en 1949, la basilique est un repère culturel et religieux majeur."
+  },
+  {
+    "id": "chutes-loufoulakari",
+    "name": "Chutes de la Loufoulakari",
+    "city": "Pool",
+    "category": "nature",
+    "coords": { "lat": -4.3, "lng": 14.75 },
+    "cover": "/placeholder/loufoulakari.svg",
+    "images": ["/placeholder/loufoulakari.svg", "/placeholder/lou2.svg", "/placeholder/lou3.svg"],
+    "description": "Cascades majestueuses accessibles en excursion d'une journée.",
+    "history": "Lieu naturel emblématique souvent associé aux traditions locales."
+  },
+  {
+    "id": "plage-pointe-noire",
+    "name": "Plage de Pointe-Noire",
+    "city": "Pointe-Noire",
+    "category": "plage",
+    "coords": { "lat": -4.8, "lng": 11.86 },
+    "cover": "/placeholder/anne2.svg",
+    "images": ["/placeholder/anne2.svg", "/placeholder/anne3.svg", "/placeholder/anne.svg"],
+    "description": "Sable doré et eau atlantique, idéale pour les couchers de soleil.",
+    "history": "Lieu de détente prisé des habitants et des voyageurs."
+  },
+  {
+    "id": "gorges-de-diosso",
+    "name": "Gorges de Diosso",
+    "city": "Kouilou",
+    "category": "nature",
+    "coords": { "lat": -4.55, "lng": 11.88 },
+    "cover": "/placeholder/anne3.svg",
+    "images": ["/placeholder/anne3.svg", "/placeholder/anne2.svg", "/placeholder/anne.svg"],
+    "description": "Falaises ocre spectaculaires surplombant la savane côtière.",
+    "history": "Paysage emblématique du littoral congolais."
+  },
+  {
+    "id": "parc-lesio-louna",
+    "name": "Parc Lesio-Louna",
+    "city": "Plateaux",
+    "category": "nature",
+    "coords": { "lat": -3.3, "lng": 15.48 },
+    "cover": "/placeholder/lou2.svg",
+    "images": ["/placeholder/lou2.svg", "/placeholder/loufoulakari.svg", "/placeholder/lou3.svg"],
+    "description": "Réserve réputée pour la protection des primates et ses paysages vallonnés.",
+    "history": "Programme de conservation et écotourisme en développement."
+  },
+  {
+    "id": "cathedrale-sacre-coeur",
+    "name": "Cathédrale Sacré-Cœur",
+    "city": "Brazzaville",
+    "category": "histoire",
+    "coords": { "lat": -4.268, "lng": 15.29 },
+    "cover": "/placeholder/anne.svg",
+    "images": ["/placeholder/anne.svg", "/placeholder/anne2.svg", "/placeholder/anne3.svg"],
+    "description": "Édifice religieux majeur au cœur de la capitale.",
+    "history": "Témoin de l'histoire coloniale et contemporaine."
+  },
+  {
+    "id": "corniche-brazzaville",
+    "name": "Corniche de Brazzaville",
+    "city": "Brazzaville",
+    "category": "urbain",
+    "coords": { "lat": -4.272, "lng": 15.266 },
+    "cover": "/placeholder/anne2.svg",
+    "images": ["/placeholder/anne2.svg", "/placeholder/anne3.svg", "/placeholder/anne.svg"],
+    "description": "Promenade avec vue sur le fleuve Congo et Kinshasa.",
+    "history": "Lieu de vie et de détente emblématique."
+  },
+  {
+    "id": "marche-poto-poto",
+    "name": "Marché de Poto-Poto",
+    "city": "Brazzaville",
+    "category": "culture",
+    "coords": { "lat": -4.256, "lng": 15.27 },
+    "cover": "/placeholder/anne3.svg",
+    "images": ["/placeholder/anne3.svg", "/placeholder/anne2.svg", "/placeholder/anne.svg"],
+    "description": "Artisanat, tissus et ambiance locale authentique.",
+    "history": "Carrefour culturel et commercial historique."
+  },
+  {
+    "id": "parc-conkouati-douli",
+    "name": "Parc Conkouati-Douli",
+    "city": "Kouilou",
+    "category": "nature",
+    "coords": { "lat": -3.9, "lng": 11.3 },
+    "cover": "/placeholder/lou3.svg",
+    "images": ["/placeholder/lou3.svg", "/placeholder/lou2.svg", "/placeholder/loufoulakari.svg"],
+    "description": "Parc côtier entre lagunes et océan, riche en biodiversité.",
+    "history": "Zone clé de conservation au sud-ouest du Congo."
+  },
+  {
+    "id": "gorges-sounda",
+    "name": "Gorges de Sounda",
+    "city": "Kouilou",
+    "category": "nature",
+    "coords": { "lat": -4.2, "lng": 12.3 },
+    "cover": "/placeholder/loufoulakari.svg",
+    "images": ["/placeholder/loufoulakari.svg", "/placeholder/lou2.svg", "/placeholder/lou3.svg"],
+    "description": "Gorges profondes façonnées par le fleuve Kouilou.",
+    "history": "Site naturel impressionnant du littoral."
+  },
+  {
+    "id": "promenade-congo",
+    "name": "Promenade sur le fleuve Congo",
+    "city": "Brazzaville",
+    "category": "nature",
+    "coords": { "lat": -4.27, "lng": 15.29 },
+    "cover": "/placeholder/anne2.svg",
+    "images": ["/placeholder/anne2.svg", "/placeholder/anne3.svg", "/placeholder/anne.svg"],
+    "description": "Balade en pirogue ou bateau pour admirer le fleuve.",
+    "history": "Le fleuve Congo, artère vitale de la région."
+  },
+  {
+    "id": "musee-brazza",
+    "name": "Mémorial Pierre Savorgnan de Brazza",
+    "city": "Brazzaville",
+    "category": "histoire",
+    "coords": { "lat": -4.26, "lng": 15.28 },
+    "cover": "/placeholder/anne.svg",
+    "images": ["/placeholder/anne.svg", "/placeholder/anne2.svg", "/placeholder/anne3.svg"],
+    "description": "Mémorial dédié au fondateur de la ville.",
+    "history": "Espace muséal et mémoriel contemporain."
+  }
+]

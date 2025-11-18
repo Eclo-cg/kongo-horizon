@@ -1,0 +1,17 @@
+[
+  {
+    "question": "En quelle année la République du Congo a-t-elle obtenu son indépendance ?",
+    "options": ["1958", "1960", "1964", "1970"],
+    "answer": 1
+  },
+  {
+    "question": "Quelle est la capitale de la République du Congo ?",
+    "options": ["Kinshasa", "Brazzaville", "Pointe-Noire", "Dolisie"],
+    "answer": 1
+  },
+  {
+    "question": "Quel fleuve majeur borde Brazzaville ?",
+    "options": ["Nil", "Congo", "Zambèze", "Niger"],
+    "answer": 1
+  }
+]

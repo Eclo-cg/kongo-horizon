@@ -1,65 +1,159 @@
-import Image from "next/image";
+"use client";
+
+import Link from "next/link";
+import { HeroBanner } from "@/components/hero-banner";
+import { SectionHeader } from "@/components/section-header";
+ 
+import { CardPlace } from "@/components/card-place";
+import { GridList } from "@/components/grid-list";
+import { StatsRow } from "@/components/stats-row";
+import { DestinationOverlayCard } from "@/components/destination-overlay-card";
+import { MasonryGallery } from "@/components/masonry-gallery";
+import { Testimonials } from "@/components/testimonials";
+import { Flame, Crown, Landmark } from "lucide-react";
+import { MapInteractiveMini } from "@/components/map-interactive";
+import { FooterComplete } from "@/components/footer-complete";
+import places from "@/data/places.json";
+import itineraries from "@/data/itineraries.json";
+import type { Place } from "@/types/place.types";
+import type { Itinerary } from "@/types/itinerary.types";
 
 export default function Home() {
+  const allPlaces = places as Place[];
+  const topTwelve = allPlaces.slice(0, 12);
+  const its = itineraries as Itinerary[];
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+    <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 pt-8 pb-10 overflow-x-hidden">
+      {/* Hero Banner */}
+        <HeroBanner />
+      
+      <div data-reveal data-reveal-delay="0.05">
+        <StatsRow />
+      </div>
+
+      {/* Catégories visuelles */}
+      <section className="mt-24" data-reveal>
+        <SectionHeader title="Par catégories" description="Accédez rapidement aux univers clés : histoire, culture et nature." />
+        <div className="grid gap-4 sm:grid-cols-3">
+          <DestinationOverlayCard title="Histoire" subtitle="Moments clés" image="/placeholder/anne.svg" href="/history" badges={[{icon:<Landmark size={12}/>, text:"Patrimoine", color:"bg-[#DC241F]"}]} />
+          <DestinationOverlayCard title="Culture" subtitle="Arts & langues" image="/placeholder/anne2.svg" href="/culture" badges={[{icon:<Crown size={12}/>, text:"Incontournable", color:"bg-[#FCD116] text-slate-900"}]} />
+          <DestinationOverlayCard title="Nature" subtitle="Sites remarquables" image="/placeholder/loufoulakari.svg" href="/explore?category=nature" badges={[{icon:<Flame size={12}/>, text:"Trending"}]} />
+        </div>
+      </section>
+
+      {/* Top Destinations grid (3) */}
+      <section className="mt-24">
+        <SectionHeader
+          title="Destinations phares"
+          description="Depuis les cascades jusqu’aux sites historiques, découvrez vos prochains lieux."
+          action={<Link href="/explore" className="inline-flex h-9 items-center rounded-md border border-slate-200 bg-white px-3 text-sm font-medium text-slate-900 hover:bg-slate-50">Voir plus</Link>}
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+          {topTwelve.slice(0,3).map((p) => (
+            <CardPlace key={p.id} place={p} />
+          ))}
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+      </section>
+
+      {/* 3 thèmes principaux */}
+      <section className="mt-16">
+        <SectionHeader
+          title="Explorer par thèmes"
+          description="Découvrir (culture/histoire), Explorer (nature/parcs), Apprendre (gastronomie/artisanat)."
+          action={<Link href="/explore" className="inline-flex h-9 items-center rounded-md border border-slate-200 bg-white px-3 text-sm font-medium text-slate-900 hover:bg-slate-50">Voir plus</Link>}
+        />
+        <div className="grid gap-4 sm:grid-cols-3">
+          <DestinationOverlayCard title="Découvrir" subtitle="Culture & histoire" image="/placeholder/anne.svg" href="/explore?category=culture" badges={[{ icon:<Landmark size={12}/>, text:"Patrimoine", color:"bg-[#DC241F]" }]} />
+          <DestinationOverlayCard title="Explorer" subtitle="Nature & parcs" image="/placeholder/loufoulakari.svg" href="/explore?category=nature" badges={[{ icon:<Flame size={12}/>, text:"Aventure" }]} />
+          <DestinationOverlayCard title="Apprendre" subtitle="Gastronomie & artisanat" image="/placeholder/anne2.svg" href="/learn" badges={[{ icon:<Crown size={12}/>, text:"Incontournable", color:"bg-[#F7C600] text-slate-900" }]} />
+        </div>
+      </section>
+
+      {/* Mini carte interactive */}
+      <section className="mt-24" data-reveal data-reveal-y="16">
+        <SectionHeader
+          title="Aperçu de la carte"
+          description="Repérez Brazzaville, Pointe‑Noire et les régions voisines puis explorez en détail."
+          action={<Link href="/explore" className="inline-flex h-9 items-center rounded-md border border-slate-200 bg-white px-3 text-sm font-medium text-slate-900 hover:bg-slate-50">Ouvrir la carte</Link>}
+        />
+        <MapInteractiveMini />
+      </section>
+
+      {/* Packages / Itineraires visuels */}
+      <section className="mt-16">
+        <SectionHeader title="Parcours" description="Des itinéraires concis pour explorer le Congo efficacement." action={<Link href="/itineraries" className="inline-flex h-9 items-center rounded-md border border-slate-200 bg-white px-3 text-sm font-medium text-slate-900 hover:bg-slate-50">Voir plus</Link>} />
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+          {its.slice(0, 3).map((it) => (
+            <DestinationOverlayCard
+              key={it.id}
+              title={it.name}
+              subtitle={it.duration}
+              image={it.cover}
+              href={`/itineraries?page=1`}
+              badges={[{ text: it.duration, color: "bg-[#FCD116] text-slate-900" }]}
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+          ))}
         </div>
-      </main>
+      </section>
+
+      {/* Galerie inspirante */}
+      <section className="mt-16">
+        <SectionHeader
+          title="Galerie inspirante"
+          description="Un aperçu visuel pour vous donner envie de visiter le Congo."
+          action={<Link href="/gallery" className="inline-flex h-9 items-center rounded-md border border-slate-200 bg-white px-3 text-sm font-medium text-slate-900 hover:bg-slate-50">Voir plus</Link>}
+        />
+        <MasonryGallery images={["/placeholder/anne.svg","/placeholder/anne2.svg","/placeholder/loufoulakari.svg","/placeholder/lou2.svg"]} />
+      </section>
+
+      {/* Témoignages */}
+      <section className="mt-16">
+        <SectionHeader
+          title="Ils en parlent"
+          description="Des voyageurs conquis par la découverte du Congo."
+          action={<Link href="/reviews" className="inline-flex h-9 items-center rounded-md border border-slate-200 bg-white px-3 text-sm font-medium text-slate-900 hover:bg-slate-50">Voir plus d’avis</Link>}
+        />
+        <Testimonials />
+      </section>
+
+      {/* Steps row */}
+      <section className="mt-24 rounded-xl border border-slate-200 bg-white p-6">
+        <SectionHeader
+          title="Comment ça marche"
+          description="Réservez des découvertes en 3 étapes simples."
+          action={<Link href="/explore" className="inline-flex h-9 items-center rounded-md border border-slate-200 bg-white px-3 text-sm font-medium text-slate-900 hover:bg-slate-50">Commencer</Link>}
+        />
+        <div className="grid gap-4 sm:grid-cols-3">
+          <div>
+            <div className="text-sm font-semibold text-slate-900">1. Choisissez une destination</div>
+            <p className="text-sm text-slate-600">Filtrez par ville, catégorie ou popularité.</p>
+          </div>
+          <div>
+            <div className="text-sm font-semibold text-slate-900">2. Personnalisez votre parcours</div>
+            <p className="text-sm text-slate-600">Sélectionnez les étapes qui vous inspirent le plus.</p>
+          </div>
+          <div>
+            <div className="text-sm font-semibold text-slate-900">3. Explorez</div>
+            <p className="text-sm text-slate-600">Profitez d’un guide clair, avec contenus audio et visuels.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA footer section */}
+      <section className="mt-16 rounded-xl border border-slate-200 bg-white p-6">
+        <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
+          <div>
+            <div className="text-lg font-semibold text-slate-900">Prêt à explorer le Congo ?</div>
+            <p className="text-sm text-slate-600">Commencez par les destinations phares ou parcourez la carte interactive.</p>
+          </div>
+          <div className="flex gap-3">
+            <Link href="/explore" className="inline-flex h-10 items-center rounded-md bg-[#009543] px-4 text-sm font-medium text-white hover:bg-[#00823a]">Explorer</Link>
+            <Link href="/map" className="inline-flex h-10 items-center rounded-md border border-slate-200 bg-white px-4 text-sm font-medium text-slate-900 hover:bg-slate-50">Carte</Link>
+          </div>
+        </div>
+      </section>
+
     </div>
   );
 }
